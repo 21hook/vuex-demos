@@ -1,0 +1,6 @@
+{
+  "presets": [ // translation rules: env, stage-3
+    ["env", { "modules": false }],
+    "stage-3"
+  ]
+}

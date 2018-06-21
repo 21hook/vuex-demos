@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vuex"></script>
+    <title>Counter</title>
+</head>
+<body>
+    <div id="app">
+        <!-- output the data & rend the component tree -->
+        <p>{{ count }}</p>
+        <p>
+            <button @click="increment">+</button>
+            <button @click="decrement">-</button>
+        </p>
+    </div>
+
+    <script>
+    const store = new Vuex.Store({
+        state: { // app state; the app root(other than root node)
+            count: 0
+        },
+        /* the mutation mutates the state of the app */
+        mutations: { // mutations; commit the mutations
+            increment: state => state.count++, // define an event handler for that event
+            decrement: state => state.count--
+        }
+    });
+
+
+    new Vue({
+        el: '#app', // mount point
+        computed: {
+            count () {
+                return store.state.count // access to the state of store object(app root)
+            }
+        },
+        methods: {
+            /* the root component commits the action into the mutation */
+            increment () {
+                store.commit('increment') // trigger the event
+            },
+            decrement () {
+                store.commit('decrement')
+            }
+        },
+        data: { // must be an object
+
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
