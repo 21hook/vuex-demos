@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 
-console.log('hi');
 module.exports = {
   entry: ['babel-polyfill', './app.js'],
   output: {

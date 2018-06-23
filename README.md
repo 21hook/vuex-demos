@@ -2,7 +2,7 @@
 Vuex state management pattern for Vue web application
 
 ## Project Structure
-This a general project structure for Vuex application.
+The general project structure for each Vuex demos
 
 ```
 ├── index.html
@@ -12,11 +12,11 @@ This a general project structure for Vuex application.
 ├── components
 │   ├── App.vue
 │   └── ...
-└── store # app state storarge lib/package
+└── store
     ├── index.js          # where we assemble modules and export the store
     ├── actions.js        # root actions
     ├── mutations.js      # root mutations
-    └── modules # app state modules
+    └── modules
         ├── cart.js       # cart module
         └── products.js   # products module
 ```
@@ -39,7 +39,7 @@ Application architecture
 State          Mutations        Actions        Vue components
 
 ## Counter with commit histories
-The Vue components dispatch a list of actions, each of which can be committed into 
+The Vue components dispatch a set of actions, each of which can be committed into 
 the mutation; When the mutation mutated the state of the app, the associated component 
 will be reactive to the state transition in the state, then output the necessary data & 
 render it in the component tree, automatically.
@@ -52,11 +52,10 @@ Application architecture
 State          Mutations        Actions           Vue components
 
 ## Todo MVC
-The Vue components dispatch a list of actions, each of which can be committed into 
+The Vue components dispatch actions, each of which can be committed into 
 the mutation; When the mutation mutated the state of the app, the associated component 
 will be reactive to the state transition in the state, then output the necessary data & 
 render it in the component tree, automatically.
-
 
 Application architecture
    output/access the data in the component tree & render it   
@@ -66,7 +65,17 @@ Application architecture
 State          Mutations        Actions           Vue components
 
 ## Shopping cart
+The Vue components dispatch actions, each of which can be committed into the mutation;
+When the mutation mutated the state of the app, the associated component will be reactive 
+to the state transition in the state, then output the payload & render it in the component
+tree.
 
+Application architecture
+   output/access the data in the component tree & render it   
+ ↑--------------------------------------------------|
+ |    mutate             commit          dispatch   ↓
+ ▆ <------------- ▆ <------------- ▆ <------------- ▆ 
+State          Mutations        Actions           Vue components
 
 ## License
 MIT
