@@ -1,3 +1,7 @@
+// A module has an isolated namespace/context.
+/**
+ * Create a Vue instance, render the component tree.
+ */
 import 'babel-polyfill'
 import Vue from 'vue'
 import App from './components/App.vue'

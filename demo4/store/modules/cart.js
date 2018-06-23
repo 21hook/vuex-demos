@@ -1,13 +1,13 @@
 import shop from '../../api/shop'
 
-// initial state
+// modular store state
 // shape: [{ id, quantity }]
-const state = {
+const state = { //
   items: [],
   checkoutStatus: null
 }
 
-// getters
+// define getters to get the state of the modular store
 const getters = {
   cartProducts: (state, getters, rootState) => {
     return state.items.map(({ id, quantity }) => {
@@ -27,7 +27,7 @@ const getters = {
   }
 }
 
-// actions
+// define actions to trigger mutations
 const actions = {
   checkout ({ commit, state }, products) {
     const savedCartItems = [...state.items]
@@ -60,7 +60,7 @@ const actions = {
   }
 }
 
-// mutations
+// define mutation handlers to be called when the mutation occurs
 const mutations = {
   pushProductToCart (state, { id }) {
     state.items.push({
@@ -83,8 +83,8 @@ const mutations = {
   }
 }
 
-export default {
-  namespaced: true,
+export default { // export the object(module member)
+  namespaced: true, // enable module namespace
   state,
   getters,
   actions,

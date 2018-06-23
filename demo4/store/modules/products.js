@@ -1,14 +1,14 @@
 import shop from '../../api/shop'
 
-// initial state
+// modular store state
 const state = {
   all: []
 }
 
-// getters
+// define getters to get the state of moduar store
 const getters = {}
 
-// actions
+// define actions to trigger actions
 const actions = {
   getAllProducts ({ commit }) {
     shop.getProducts(products => {
@@ -17,7 +17,7 @@ const actions = {
   }
 }
 
-// mutations
+// define mutation handlers to be called when the mutation occurs
 const mutations = {
   setProducts (state, products) {
     state.all = products
@@ -30,7 +30,7 @@ const mutations = {
 }
 
 export default {
-  namespaced: true,
+  namespaced: true, // enable modular store namespace
   state,
   getters,
   actions,
